@@ -1,0 +1,18 @@
+
+# Development Stage
+FROM alpine:3.22 as dev
+
+# Define working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json to container
+COPY    fastapi/package.json ./
+RUN npm install
+
+
+# Copy all files to container
+COPY fastapi/ .
+
+CMD ["npm", ""]
+
+# Production stage
